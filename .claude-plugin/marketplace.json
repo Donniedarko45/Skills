@@ -1,0 +1,14 @@
+{
+  "name": "donniedarko45-skills",
+  "description": "Engineering skills for Claude, organised by discipline: frontend, backend and devops.",
+  "owner": {
+    "name": "Donniedarko45"
+  },
+  "plugins": [
+    {
+      "name": "frontend",
+      "source": "./frontend",
+      "description": "React, Next.js and TypeScript skills: component design, UI design, design systems, accessibility and web performance."
+    }
+  ]
+}

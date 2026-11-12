@@ -1,0 +1,11 @@
+{
+  "name": "frontend",
+  "displayName": "Frontend",
+  "version": "0.1.0",
+  "description": "React, Next.js and TypeScript skills: component design, UI design, design systems, accessibility and web performance.",
+  "author": {
+    "name": "Donniedarko45"
+  },
+  "repository": "https://github.com/Donniedarko45/Skills",
+  "keywords": ["frontend", "react", "nextjs", "typescript", "tailwind", "accessibility", "performance"]
+}
