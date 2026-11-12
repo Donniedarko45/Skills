@@ -1,0 +1,11 @@
+{
+  "name": "devops",
+  "displayName": "DevOps",
+  "version": "0.0.1",
+  "description": "DevOps skills: CI/CD, containers, infrastructure as code, deployment and incident response. Planned, no skills yet.",
+  "author": {
+    "name": "Donniedarko45"
+  },
+  "repository": "https://github.com/Donniedarko45/Skills",
+  "keywords": ["devops", "ci", "docker", "infrastructure"]
+}

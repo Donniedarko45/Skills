@@ -1,0 +1,11 @@
+{
+  "name": "backend",
+  "displayName": "Backend",
+  "version": "0.0.1",
+  "description": "Backend engineering skills: API design, data modelling, auth, testing and observability. Planned, no skills yet.",
+  "author": {
+    "name": "Donniedarko45"
+  },
+  "repository": "https://github.com/Donniedarko45/Skills",
+  "keywords": ["backend", "api", "database"]
+}
