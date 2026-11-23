@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: a11y-audit-signup
+expected_outcome: |
+  A report, with no code changes, based on an automated scan of the running page plus a keyboard
+  check, listing findings by severity with WCAG criteria and fixes: the div submit,
+  placeholder-only inputs, the unmanaged plan dialog, low-contrast helper text with its ratio,
+  blocked paste, plus the other issues present, and a statement of what was not covered.
+context:
+  scaffold_script: place-files.sh

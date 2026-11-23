@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: rc-server-client-refactor
+expected_outcome: |
+  The product page becomes an async Server Component that awaits params and loads the product with
+  getProduct on the server, calls notFound() for unknown ids, and renders small client components
+  for only the gallery and add-to-cart. moment and lodash leave the client bundle. The project
+  typechecks and builds.
+context:
+  scaffold_script: place-files.sh

@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: perf-slow-homepage
+expected_outcome: |
+  Measured on a production build before and after with the same setup; the hero becomes an eager,
+  high-priority, sized next/image; the promo banner stops shifting layout; data is fetched on the
+  server; moment, lodash and recharts leave the initial client bundle; a fresh measurement shows
+  LCP at or under 2.5 s and CLS at or under 0.1 on the mobile profile.
+context:
+  scaffold_script: place-files.sh

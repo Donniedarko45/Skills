@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: ui-invoicing-dashboard
+expected_outcome: |
+  A dashboard that builds, reads well at 390px and desktop widths, uses theme tokens rather than
+  scattered palette colours, uses tabular figures for money, labels invoice status in text,
+  surfaces overdue invoices, and contains no placeholder copy or emoji icons. Visual quality is
+  judged by a person from screenshots.
+context:
+  scaffold_script: place-files.sh

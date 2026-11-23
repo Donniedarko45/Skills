@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: perf-search-typing-lag
+expected_outcome: |
+  Typing latency measured before and after on a production build; the input stays urgent while the
+  list work is deferred or bounded; per-row formatting and search normalisation happen once rather
+  than on every keystroke; rows keyed by id; numbers reported; the build passes and search still
+  filters correctly.
+context:
+  scaffold_script: place-files.sh

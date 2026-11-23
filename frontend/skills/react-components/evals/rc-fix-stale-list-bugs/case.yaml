@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: rc-fix-stale-list-bugs
+expected_outcome: |
+  OrderList derives the visible list and total during render from props plus local state (deleted
+  ids, filter, selected id), stores the selection by order id, uses order ids as keys, and no
+  longer defines Row inside the component. New orders appear immediately and the detail panel
+  always shows the selected order.
+context:
+  scaffold_script: place-files.sh

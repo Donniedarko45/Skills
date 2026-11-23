@@ -1,0 +1,8 @@
+schema_version: "1.1"
+name: ui-landing-page
+expected_outcome: |
+  A landing page that builds, works at 390px, avoids the generic multi-hue gradient look, shows
+  the product in the hero, uses copy specific to Tally, has a clear primary call to action, and
+  includes the two pricing tiers. Visual quality is judged by a person from screenshots.
+context:
+  scaffold_script: place-files.sh

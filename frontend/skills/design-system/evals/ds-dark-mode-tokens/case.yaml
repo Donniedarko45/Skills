@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: ds-dark-mode-tokens
+expected_outcome: |
+  Semantic colour tokens defined once with light and dark values, mapped into Tailwind, a
+  class-based dark variant, a no-flash theme provider with suppressHydrationWarning, a three-way
+  toggle, components migrated off raw palette classes, readable status colours in both themes, and
+  a passing build.
+context:
+  scaffold_script: place-files.sh

@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: ds-button-component
+expected_outcome: |
+  One Button component with typed variants and sizes and defaults, tailwind-merge for caller
+  classes, focus-visible and disabled styles, type=button by default, an accessible loading state;
+  links styled via the variants rather than nested buttons; the icon button named; every copy
+  replaced; the build passes.
+context:
+  scaffold_script: place-files.sh

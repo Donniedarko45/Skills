@@ -1,0 +1,3 @@
+export default function Page() {
+  return <main className="p-8"><h1 className="text-2xl font-semibold">Signed out</h1></main>
+}

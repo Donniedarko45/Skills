@@ -1,0 +1,8 @@
+schema_version: "1.1"
+name: a11y-account-menu
+expected_outcome: |
+  An avatar <button> with a name and aria-expanded opens a menu; Escape and outside clicks close
+  it and Escape returns focus to the trigger; ARIA roles match keyboard behaviour; sign out
+  submits the server action; the behaviour was checked in a running app; the build passes.
+context:
+  scaffold_script: place-files.sh
