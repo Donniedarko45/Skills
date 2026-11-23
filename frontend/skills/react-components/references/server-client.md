@@ -186,8 +186,18 @@ Caching differs by version and configuration:
 
 - With `cacheComponents: true`, add the `'use cache'` directive to an async function or component,
   set a lifetime with `cacheLife()`, tag with `cacheTag()`, and wrap anything that reads request
-  data (`cookies()`, `headers()`, `searchParams`) or must be fresh in `<Suspense>`.
-- Without it, the older model applies (`fetch` cache options, route segment config).
+  data (`cookies()`, `headers()`, `searchParams`) or must be fresh in `<Suspense>`. Route segment
+  config (`export const revalidate`, `dynamic`, `fetchCache`) is removed in this mode.
+- Cache the **data function**, not a component that also reads cookies or headers, so per-user
+  output never lands in a shared cache.
+- Invalidate by tag when data changes: `updateTag(tag)` inside a Server Action gives
+  read-your-own-writes (the next request waits for fresh data); `revalidateTag(tag, 'max')` serves
+  stale data while refreshing in the background; `revalidateTag(tag, { expire: 0 })` expires
+  immediately from Route Handlers and webhooks. The one-argument `revalidateTag(tag)` is
+  deprecated in Next.js 16.
+- The default `'use cache'` store is per server instance. With several instances, configure a
+  shared `cacheHandlers` store or invalidation reaches only the instance that handled the write.
+- Without `cacheComponents`, the older model applies (`fetch` cache options, route segment config).
 
 Read `node_modules/next/dist/docs/01-app/01-getting-started/08-caching.md` (or
 `02-guides/caching-without-cache-components.md`) before writing caching code.
