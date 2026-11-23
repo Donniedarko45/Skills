@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: rc-cache-components
+expected_outcome: |
+  The product list is cached with the Cache Components APIs the project has enabled ('use cache'
+  with cacheLife and cacheTag), the per-visitor greeting stays outside the cache, and the admin
+  Server Action invalidates the tag with updateTag so edits show immediately. Repeated page loads
+  stop querying the database. The project typechecks and builds.
+context:
+  scaffold_script: place-files.sh
