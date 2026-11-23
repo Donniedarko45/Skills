@@ -137,8 +137,20 @@ Work down this list and stop at the first one that fits. Each step down adds cos
 Server data is not client state. Do not copy fetched data into `useState`; render it from props,
 and refresh it by revalidating on the server.
 
+**One owner per piece of state.** If a parent holds a list, the child renders it from props and
+asks the parent to change it through a callback (`onDelete(id)`); it never keeps its own copy
+(`useState(props.items)` freezes the first value and silently ignores updates). Store
+selections and references by **id**, never by array index, which points at a different item
+after any insert, delete or filter.
+
 To reset a component's state when its identity changes, give it a `key`
 (`<Profile key={userId} />`) rather than writing an effect that clears state.
+
+**Keep render and updater functions pure.** React calls components, `useState` initialisers and
+updater functions (`setItems(prev => ...)`) twice in development Strict Mode to surface side
+effects. Generating IDs, incrementing counters, reading the clock or calling APIs inside them
+produces bugs that differ between development and production; do that work in the event handler
+first and pass the result in.
 
 ## 5. Effects are a last resort
 
