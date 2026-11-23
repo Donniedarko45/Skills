@@ -1,6 +1,6 @@
 ---
 name: ui-design
-description: Make interfaces look and feel well designed - layout, spacing, typography, colour, visual hierarchy, responsive behaviour, dark mode, interaction states and motion - in React/Next.js with Tailwind CSS. Use this whenever building or restyling any visible UI (a page, landing page, dashboard, form, card, table, modal, navbar, empty state), whenever the user says something looks off, plain, cluttered, generic or "not professional", asks to polish, modernise or make something responsive or mobile-friendly, or shares a screenshot or mockup to match. Use it even when the request is purely functional ("add a settings page"), because the result will be judged by how it looks.
+description: Make interfaces look and feel well designed - layout, spacing, typography, colour, visual hierarchy, responsive behaviour, dark mode, interaction states and motion - in React/Next.js with Tailwind CSS. Use this whenever building or restyling any visible UI (a page, landing page, dashboard, form, card, table, modal, navbar, empty state), whenever the user says something looks off, plain, cluttered, generic or "not professional", asks to polish, modernise or make something responsive or mobile-friendly, or shares a screenshot or mockup to match. Also use it when asked for a premium, modern, high-end or "Dribbble-quality" look, a SaaS or fintech dashboard, an admin panel, a landing page, or stat cards and charts. Use it even when the request is purely functional ("add a settings page"), because the result will be judged by how it looks.
 ---
 
 # UI design
@@ -21,13 +21,19 @@ element accounted for. Decoration comes last and is usually not needed.
   Do not "improve" a design you were asked to implement.
 - **Use real content.** Design with realistic names, numbers and paragraph lengths. Lorem ipsum
   hides the problems real content causes.
+- **No design language yet, or asked to make it look premium?** Use the house style in
+  `references/visual-style.md`: monochrome plus one accent, grey trays holding white cards,
+  big tabular numbers with inline context, quiet monospace metadata, micro-visualisations in
+  stat cards, and copy written from the data. Read it before building a dashboard, app screen
+  or landing page from scratch; `assets/dashboard-example.html` shows it assembled.
 
 ## 2. Hierarchy
 
 A viewer should know where to look first, second and third without reading.
 
-- One primary action per view, styled as the only filled accent button. Secondary actions are
-  outlined or ghost; tertiary ones are text links. Two equally loud buttons mean neither wins.
+- One primary action per view, styled as the only filled button (the brand colour, or
+  near-black in a monochrome design). Secondary actions are outlined or ghost; tertiary ones are
+  text links. Two equally loud buttons mean neither wins.
 - Create emphasis with **size, weight and colour together**, and de-emphasise the rest. Making
   supporting text smaller and lower-contrast is usually more effective than making the heading
   bigger.
@@ -190,7 +196,8 @@ make an actual decision instead:
 - placeholder copy ("Lorem ipsum", "Feature 1", "Your tagline here")
 
 Derive the look from the product instead: its content, its audience, the tokens already in the
-codebase. A dense data tool and a marketing page should not look alike.
+codebase. A dense data tool and a marketing page should not look alike. When there is nothing
+to derive from, `references/visual-style.md` is a tested default that avoids every tell above.
 
 ## 11. Look at it
 
@@ -210,3 +217,8 @@ include the screenshots if the environment lets you share them.
 - `references/layout-recipes.md` - Tailwind recipes for common layouts: page container, app
   shell with sidebar, card grid, form, data table, sticky header, hero, empty state, dialog.
 - `references/polish-checklist.md` - the final pass before calling a screen done.
+- `references/visual-style.md` - the house style: tokens, surfaces (canvas, tray, card),
+  numbers and mono metadata, product UI patterns, micro-visualisations, charts, copy, motion,
+  marketing pages, dark mode, and a before/after of what polish changes.
+- `assets/dashboard-example.html` and `assets/theme.css` - a complete page in the house style
+  (dashboard and marketing sections, light and dark) to read or adapt.
