@@ -1,11 +1,11 @@
 {
   "name": "devops",
   "displayName": "DevOps",
-  "version": "0.0.1",
-  "description": "DevOps skills: CI/CD, containers, infrastructure as code, deployment and incident response. Planned, no skills yet.",
+  "version": "0.1.0",
+  "description": "DevOps skills: CI/CD with GitHub Actions, containers, infrastructure as code with Terraform/OpenTofu, deployment and Kubernetes, monitoring and alerting, and incident response.",
   "author": {
     "name": "Donniedarko45"
   },
   "repository": "https://github.com/Donniedarko45/Skills",
-  "keywords": ["devops", "ci", "docker", "infrastructure"]
+  "keywords": ["devops", "ci", "github-actions", "docker", "terraform", "kubernetes", "deployment", "monitoring", "slo", "incident-response"]
 }

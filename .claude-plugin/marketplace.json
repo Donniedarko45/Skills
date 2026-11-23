@@ -9,6 +9,16 @@
       "name": "frontend",
       "source": "./frontend",
       "description": "React, Next.js and TypeScript skills: component design, UI design, design systems, accessibility and web performance."
+    },
+    {
+      "name": "backend",
+      "source": "./backend",
+      "description": "Backend skills for TypeScript/Node and PostgreSQL: API design, database and safe migrations, auth and security, testing, observability and background jobs."
+    },
+    {
+      "name": "devops",
+      "source": "./devops",
+      "description": "DevOps skills: CI/CD, containers, Terraform/OpenTofu, deployment and Kubernetes, monitoring and alerting, incident response."
     }
   ]
 }
