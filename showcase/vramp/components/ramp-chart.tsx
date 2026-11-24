@@ -41,10 +41,10 @@ export function RampChart() {
 
       <div className="relative overflow-hidden rounded-[28px] border border-night-line bg-night-2/80 p-3 shadow-[0_40px_120px_-40px_oklch(0.15_0.1_265/0.6)]">
         <div className="flex items-center justify-between gap-3 px-3 pt-2 pb-1">
-          <p className="label text-on-night-muted">Engagement · Pulse Health</p>
-          <p className="label flex items-center gap-2 text-volt">
+          <p className="label whitespace-nowrap text-on-night-muted"><span className="hidden sm:inline">Engagement · </span>Pulse Health</p>
+          <p className="label flex items-center gap-2 whitespace-nowrap text-volt">
             <span className="live-dot size-1.5 rounded-full bg-volt" aria-hidden="true" />
-            Week 6 · live
+            <span><span className="hidden sm:inline">Week 6 · </span>Live</span>
           </p>
         </div>
 
