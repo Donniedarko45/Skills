@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { clsx } from 'clsx'
 
 type Clock = { city: string; tz: string }
 
@@ -13,7 +14,7 @@ function hourIn(tz: string, now: Date) {
 }
 
 /** Live local times across the network. Renders placeholders on the server, real times after mount. */
-export function Clocks({ clocks }: { clocks: Clock[] }) {
+export function Clocks({ clocks }: { clocks: readonly Clock[] }) {
   const [now, setNow] = useState<Date | null>(null)
 
   useEffect(() => {
@@ -26,27 +27,28 @@ export function Clocks({ clocks }: { clocks: Clock[] }) {
 
   return (
     <div>
-      <ul className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-3 lg:grid-cols-6">
+      <div className="flex items-center justify-between">
+        <p className="text-[13px] font-medium">The network, right now</p>
+        <p data-awake className="text-[12px] text-ink-muted" aria-live="polite">
+          {awake === null ? ' ' : `${awake} of ${clocks.length} cities working`}
+        </p>
+      </div>
+      <ul className="mt-3 divide-y divide-line">
         {clocks.map((c) => {
           const h = now ? hourIn(c.tz, now) : null
           const working = h !== null && h >= 8 && h < 20
           return (
-            <li key={c.city} data-tz={c.tz} className="bg-surface p-4">
-              <p className="text-sm text-muted">{c.city}</p>
-              <p data-time className="mt-1 font-mono text-2xl tracking-tight tabular-nums text-ink" suppressHydrationWarning>
+            <li key={c.city} data-tz={c.tz} className="flex items-center gap-3 py-2">
+              <span data-dot className={clsx('size-1.5 rounded-full', working ? 'live-dot bg-hue-500' : 'bg-line-strong')} aria-hidden="true" />
+              <span className="flex-1 text-[13px]">{c.city}</span>
+              <span data-status className="text-[12px] text-ink-muted">{h === null ? ' ' : working ? 'Building' : 'Off'}</span>
+              <span data-time className="w-12 text-right font-mono text-[13px] tabular-nums" suppressHydrationWarning>
                 {now ? timeIn(c.tz, now) : '--:--'}
-              </p>
-              <p className="label mt-2 flex items-center gap-1.5 text-muted">
-                <span data-dot className={`size-1.5 rounded-full ${working ? 'live-dot bg-volt-ink' : 'bg-line-strong'}`} aria-hidden="true" />
-                <span data-status>{h === null ? ' ' : working ? 'Building' : 'Off'}</span>
-              </p>
+              </span>
             </li>
           )
         })}
       </ul>
-      <p data-awake className="mt-3 text-sm text-muted" aria-live="polite">
-        {awake === null ? ' ' : `Right now, ${awake} of these ${clocks.length} cities are in working hours.`}
-      </p>
     </div>
   )
 }

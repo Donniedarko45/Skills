@@ -14,6 +14,7 @@ export const site = {
 }
 
 export const nav = [
+  { label: 'Home', href: '#top' },
   { label: 'Work', href: '#work' },
   { label: 'Services', href: '#services' },
   { label: 'Process', href: '#process' },
@@ -46,7 +47,7 @@ export const doors = {
   agencies: {
     eyebrow: 'For agencies',
     title: 'Your brand.',
-    titleAccent: 'Our build.',
+    titleMuted: 'Our build.',
     body: 'Say yes to the projects you would otherwise turn down. We work under your name, in your tools, with your client never knowing we exist.',
     points: [
       'White-label by default: your PM tool, your client calls, your logo on the deck',
@@ -57,7 +58,7 @@ export const doors = {
   companies: {
     eyebrow: 'For companies and startups',
     title: 'A product team,',
-    titleAccent: 'without the hiring.',
+    titleMuted: 'without the hiring.',
     body: 'A designer, engineers and a lead who have shipped this before, matched to your stack and timezone. Building in days, not after a three-month hiring loop.',
     points: [
       'Work happens in your repo and your Slack, from day one',
@@ -110,13 +111,13 @@ export const work = [
 ] as const
 
 export const services = [
-  { n: '01', title: 'Product and UX design', body: 'Discovery, flows, prototypes and design systems that engineers can actually build.', tags: ['Figma', 'Research', 'Design systems'] },
-  { n: '02', title: 'Web applications', body: 'Dashboards, portals and SaaS products, fast and accessible by default.', tags: ['Next.js', 'React', 'TypeScript'] },
-  { n: '03', title: 'Mobile apps', body: 'Native-feeling iOS and Android apps from one team, store-ready.', tags: ['React Native', 'Swift', 'Kotlin'] },
-  { n: '04', title: 'AI features', body: 'Assistants, search and automation grounded in your data, with evals so you know it works.', tags: ['LLMs', 'RAG', 'Evals'] },
-  { n: '05', title: 'Backend and APIs', body: 'Data models, integrations and APIs that hold up when the product does.', tags: ['Node', 'Postgres', 'Go'] },
-  { n: '06', title: 'Platform and DevOps', body: 'CI/CD, infrastructure as code and observability, so launch day is boring.', tags: ['AWS', 'Terraform', 'CI/CD'] },
-]
+  { icon: 'design', title: 'Product and UX design', body: 'Discovery, flows, prototypes and design systems engineers can build.' },
+  { icon: 'apps', title: 'Web and mobile apps', body: 'Dashboards, portals, SaaS and store-ready iOS and Android apps.' },
+  { icon: 'ai', title: 'AI features', body: 'Assistants, search and automation grounded in your data, with evals.' },
+  { icon: 'platform', title: 'Backend, APIs and platform', body: 'Data models, integrations, CI/CD and observability, so launch day is boring.' },
+] as const
+
+export const stack = ['Figma', 'Next.js', 'React Native', 'TypeScript', 'Postgres', 'Python', 'AWS', 'Terraform']
 
 export const process = [
   { n: '01', when: 'Day 0', title: 'Brief', body: 'Send us the problem, not a spec. After a 30-minute call you get scope, team and a fixed price within 24 hours.' },
@@ -174,11 +175,13 @@ export const quotes = [
   {
     quote: 'We pitched a mobile app we could not have built in-house. VRAMP built it under our name, on time, and our client still thinks they are our team.',
     name: 'Agency founder',
+    initials: 'AF',
     org: 'Independent studio, London',
   },
   {
     quote: 'Three days after the first call we had a working repo and a Friday demo on the calendar. Six weeks later we were live.',
     name: 'CTO',
+    initials: 'CT',
     org: 'Series A health startup',
   },
 ]

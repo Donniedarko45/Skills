@@ -18,19 +18,29 @@ from "brief" to "launched":
 
 **Two buyers, two doors.** Agencies want a white-label build partner that stays invisible; companies
 want a product team without hiring one. Most studio sites blur them together. Here they get one
-section each, side by side, each with its own proof: a client-facing Slack thread posted under the
-agency's name, and a commit log for the company that wants to see work land.
+section each, side by side, each with its own proof laid over a photo: a client update posted under
+the agency's name, and a merged, deployed pull request for the company that wants to see work land.
 
 **Proof over adjectives.** Every claim sits next to evidence: case studies with numbers, fixed
-prices on the page, a 6-city clock that shows who is building right now, and a brief form instead of
-a "contact us" link. Research on agency and B2B sites (sources below) agrees that transparent
-pricing, specific outcomes, and a short path from intent to conversation are what convert.
+prices on the page, a live clock showing which cities in the network are working right now, and a
+brief form instead of a "contact us" link. Research on agency and B2B sites (sources below) agrees
+that clear pricing, specific outcomes and a short path from intent to conversation are what convert.
 
-**Visual language.** VRAMP blue as the ground for the hero, pricing highlight and closing call to
-action; warm paper for reading sections; near-black "carbon" for the case-study section so product
-screens read as screens. Geist for text and numbers, Instrument Serif italic for the one emotional
-word in each heading, Geist Mono for labels. Motion is limited to the ramp drawing in, a slow client
-marquee and scroll reveals, all turned off under `prefers-reduced-motion`.
+**Visual language.** Version 2 follows the crafted fintech and product marketing pages used as
+references for the `ui-design` skill (`frontend/skills/ui-design/references/landing-pages.md`):
+
+- a light, warm canvas; a centred two-tone headline (second line muted); a dark pill as the only
+  filled button;
+- a hero stage built from the product itself: a phone running an app the team shipped, with
+  "team matched", "this week" and "first commit" cards floating around it and multiplayer cursor
+  tags for two team members;
+- one hue (VRAMP blue) used as a ladder of tints, with its deepest shade for exactly one
+  full-bleed band (the testimonials);
+- the ramp as a staircase: four process steps rising left to right, the last in the deep shade;
+- warm photography with UI cards laid over it, big light numerals for stats, Geist throughout.
+
+Motion is limited to a short entrance, cards drifting slowly and live dots, all off under
+`prefers-reduced-motion`.
 
 ## Run it
 
@@ -53,6 +63,18 @@ Everything editable lives in `lib/content.ts`.
 4. Wire the brief form (`components/brief-form.tsx`) to a form endpoint or CRM. It currently opens
    the visitor's email app with the brief filled in.
 5. Add an Open Graph image in `app/` (`opengraph-image.png`) and a favicon.
+
+## Photos
+
+From Unsplash (free to use under the Unsplash licence). Photo IDs, in `public/photos/`:
+
+- `pair-at-laptop.jpg`: 1531482615713-2afd69097998
+- `engineer-at-desk.jpg`: 1551434678-e076c223a692
+- `tablet-wireframes.jpg`: 1586717791821-3f44a563fa4c
+- `team-at-table.jpg`: 1522071820081-009f0129c71c
+
+Swap in photos of the real team when you have them. People shown in UI cards use initials,
+not stock faces.
 
 ## Checked
 

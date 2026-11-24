@@ -273,29 +273,9 @@ Keep it under about 250 ms, animate `transform` and `opacity` only, and remove i
 
 ## 10. Marketing pages
 
-The same restraint, scaled up.
-
-- **Two-tone headline**: one statement, the second half in a muted shade of the same colour.
-  `text-5xl sm:text-7xl font-medium tracking-[-0.045em] leading-[1.02] text-balance`;
-  `<span className="opacity-55">finances with ease</span>`. An editorial serif display face is
-  the alternative to the tight sans; choose one, not both.
-- **Eyebrow** above the headline: small uppercase mono or sans with tracking, or a social-proof
-  pill (avatar stack + "38,182 active users", rating "4.8 ★★★★★", "Backed by ...").
-- **CTA pair**: a dark filled pill and a quiet text or outline pill, both `h-11 rounded-full`.
-- **Hero visual is the product**: real UI cards floating around a central image (a hand holding a
-  card or device, a phone), partially overlapping, sometimes with small pointer labels. Not an
-  abstract gradient blob.
-- **One hue family per page**: cream with oxblood, beige with terracotta, white with lavender
-  tints, white with mint. Use the darkest shade for one full-bleed contrast section.
-- **Statement paragraph**: a large (`text-3xl sm:text-5xl`) sentence about what the product does,
-  its second half muted.
-- **Stats**: very large, light-weight numerals (`text-6xl font-light tracking-[-0.04em]`) with
-  small labels, separated by thin vertical rules.
-- **Feature cards show real UI fragments** (a transfer card, a transaction list) instead of icons,
-  with a hairline above a "Learn more →" row.
-- **Photography**: warm, natural light, people actually working. UI cards may overlap photos.
-- **Footer**: a big closing headline, numbered link groups (`01 — Product`), an email field as a
-  single pill with the button inside it.
+Landing and marketing pages have their own anatomy, sizes and failure modes. They are in
+`landing-pages.md`; read it before building one. The product fragments shown on those pages
+follow sections 3-8 here.
 
 ## 11. Dark mode
 

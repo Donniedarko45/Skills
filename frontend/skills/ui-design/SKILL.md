@@ -24,8 +24,13 @@ element accounted for. Decoration comes last and is usually not needed.
 - **No design language yet, or asked to make it look premium?** Use the house style in
   `references/visual-style.md`: monochrome plus one accent, grey trays holding white cards,
   big tabular numbers with inline context, quiet monospace metadata, micro-visualisations in
-  stat cards, and copy written from the data. Read it before building a dashboard, app screen
-  or landing page from scratch; `assets/dashboard-example.html` shows it assembled.
+  stat cards, and copy written from the data. Read it before building a dashboard or app screen
+  from scratch; `assets/dashboard-example.html` shows it assembled.
+- **Building a landing, home, product or agency page?** Read `references/landing-pages.md`
+  first and follow its section anatomy and sizes: light canvas, centred two-tone headline,
+  a hero stage of real UI fragments around a central object, one hue as a tint ladder, warm
+  photography, big quiet numerals. Its failure-mode table lists what makes a page look generated;
+  check the draft against it before polishing anything else.
 
 ## 2. Hierarchy
 
@@ -197,7 +202,12 @@ make an actual decision instead:
 
 Derive the look from the product instead: its content, its audience, the tokens already in the
 codebase. A dense data tool and a marketing page should not look alike. When there is nothing
-to derive from, `references/visual-style.md` is a tested default that avoids every tell above.
+to derive from, `references/visual-style.md` (product UI) and `references/landing-pages.md`
+(marketing pages) are tested defaults that avoid every tell above.
+
+A "distinctive brand idea" is not a licence to break these defaults. Express it through content,
+one motif and copy inside the proven layout (a staircase section, a cursor tag, a word in the
+headline), not by flooding the hero with a saturated colour or inventing a new layout grammar.
 
 ## 11. Look at it
 
@@ -219,6 +229,9 @@ include the screenshots if the environment lets you share them.
 - `references/polish-checklist.md` - the final pass before calling a screen done.
 - `references/visual-style.md` - the house style: tokens, surfaces (canvas, tray, card),
   numbers and mono metadata, product UI patterns, micro-visualisations, charts, copy, motion,
-  marketing pages, dark mode, and a before/after of what polish changes.
+  dark mode, and a before/after of what polish changes.
+- `references/landing-pages.md` - marketing pages: failure modes, tokens and type scale with
+  measured sizes, header, hero and its product stage, 12 section patterns, photography, footer,
+  mobile, checklist.
 - `assets/dashboard-example.html` and `assets/theme.css` - a complete page in the house style
   (dashboard and marketing sections, light and dark) to read or adapt.

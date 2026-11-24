@@ -1,6 +1,6 @@
-import { SiteHeader } from '@/components/site-header'
 import { Hero } from '@/components/hero'
-import { ClientStrip, Doors, DraftNotice, Faq, FinalCta, Network, Pricing, Process, Quotes, Services, SiteFooter, Work } from '@/components/sections'
+import { SiteHeader } from '@/components/site-header'
+import { DraftNotice, Doors, Faq, FinalCta, LogoRow, Network, Pricing, Process, Quotes, Services, SiteFooter, Statement, Work } from '@/components/sections'
 
 export default function Home() {
   return (
@@ -9,14 +9,15 @@ export default function Home() {
       <SiteHeader />
       <main>
         <Hero />
-        <ClientStrip />
+        <LogoRow />
+        <Statement />
         <Doors />
+        <Process />
         <Work />
         <Services />
-        <Process />
         <Network />
-        <Pricing />
         <Quotes />
+        <Pricing />
         <Faq />
         <FinalCta />
       </main>
