@@ -54,6 +54,11 @@ generated page did.
 | Bold 700-800 headlines                                              | 500 weight, tracking -0.04em to -0.05em                                             |
 | Gradient text, glassmorphism, neon glows                            | Flat colour, hairlines, soft shadows                                                |
 | Testimonials with stock-photo faces and invented names              | Initials avatars, or real quotes only; mark placeholders as placeholders            |
+| A stock photo as the hero centrepiece                               | The product itself (dashboard, app screen, card), or what a service client receives |
+| Cursor tags, rings, photo and five cards all competing in the hero  | One central object, 3 fragments (2 on mobile), at most one cursor tag                |
+| The two-tone device on every section heading                        | Two-tone for the hero and at most two section headings; plain or statement elsewhere |
+| A layout that could be any brand's once the logo is swapped         | One bespoke device from the product's own world (section 6, "Earn distinctiveness")  |
+| Showing how an engagement runs but never the output                 | A proof section: work with real product screens, numbers, one quote                 |
 
 ## 3. Tokens and type scale
 
@@ -113,10 +118,14 @@ Order, all centred, `max-w-3xl` for the text:
 3. **Sub-copy**, one sentence, 16-18px muted, `max-w-md`.
 4. **Buttons**: dark filled pill with an arrow + outline or plain-text secondary. 12px gap.
 5. **The stage**, 40-60px below the buttons, as wide as the container, 460-560px tall:
-   - a central object: phone mock, card in a hand, product window, or a photo in a big rounded frame;
+   - a central object that **is the product**: its dashboard or app screen in a phone or window, or
+     the product held in a hand (a card, a device). For a service business, it is what the client
+     receives: the proposal, the matched team, the deliverable. A lifestyle stock photo is not a
+     central object; photography belongs in later sections. The object must be on-message: an
+     agency hero showing an unrelated sample app makes the visitor ask whose product it is;
    - 3-5 UI fragments around it, partly overlapping it, at different heights: a metric card,
      a short list ("This month": two rows with avatar, name, date, amount), a mini chart;
-   - 1-2 **cursor tags**: a small coloured label with a pointer arrow, as in a multiplayer design
+   - at most one or two **cursor tags**, only when collaboration is part of the story, never covering content:: a small coloured label with a pointer arrow, as in a multiplayer design
      tool (`Smart Asset Allocation` in a blue pill, a yellow one on the other side);
    - one background texture behind it: 3-4 concentric circles in `--line`, a dot field fading
      out, or thin circuit lines with small rounded nodes;
@@ -126,6 +135,26 @@ The first screen shows the chip, headline, buttons and the top half of the stage
 of logos may sit inside the hero, between buttons and stage.
 
 ## 6. Section patterns (pick 6-9)
+
+### Earn distinctiveness inside the layout
+
+Blind reviews of pages built from this guide scored them high on matching the reference taste
+but marked them down as "a well-executed template" when nothing was specific to the brand. A
+competent page without this guide tends to win on identity. Keep the layout and add all three:
+
+1. **One bespoke device from the product's own world**, used two or three times: ruled ledger
+   lines and tally-mark numerals for a bookkeeping app; a white-label toggle ("Your client sees" /
+   "Behind the scenes") for an agency; a route line for logistics. It lives inside the tokens and
+   layout above (a texture, a numeral style, a card), not as a new colour scheme.
+2. **One interactive moment** that lets a visitor try the core idea: a tax set-aside calculator,
+   a team configurator, a before/after toggle. Small, keyboard accessible, with a sensible default.
+3. **Proof of output**: 2-3 pieces of work with real product screens and one number each, and one
+   quote. Process and team sections show how it works; proof shows that it works. Services pages
+   without it read as promises.
+
+Keep the numbers consistent across the page (the same count of countries, people, days
+everywhere), show the logo row once, and mark invented content where it appears (a small
+"Sample" tag), not only in a banner.
 
 **Logo row.** "Trusted by 2,000+ teams" in 15-16px muted, centred; 6-8 greyscale wordmarks at
 50-60% opacity, optionally scrolling. Variant: a full-bleed band in the brand's deep shade with
@@ -207,7 +236,11 @@ copyright row.
 - [ ] Hero canvas is light; there are at most two full-bleed colour bands on the page.
 - [ ] Headline is two-tone, weight 500, tracking about -0.045em, 64-76px at 1440px.
 - [ ] Hero has a proof chip, one-line sub-copy and a dark pill primary button.
-- [ ] Hero stage shows a central object with 3-5 realistic UI fragments and at least one cursor tag.
+- [ ] Hero stage's central object is the product (or the client's deliverable), on-message, with
+      3 realistic UI fragments around it (2 on mobile, none overlapping each other).
+- [ ] One bespoke device from the product's world, one interactive moment, and a proof section.
+- [ ] Two-tone headings on the hero and at most two other sections.
+- [ ] Numbers agree everywhere; logos appear once; placeholders are tagged where they appear.
 - [ ] One hue family, used as a tint ladder; accent colour only on small things.
 - [ ] At least one statement paragraph with fading text and one big-numeral stats row.
 - [ ] Feature cards contain UI fragments, not icons.
