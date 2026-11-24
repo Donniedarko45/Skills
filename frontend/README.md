@@ -7,7 +7,7 @@ installed versions and existing conventions first and to follow those.
 | Skill                                          | Triggers on                                                                 | Bundled extras                                              |
 | ---------------------------------------------- | --------------------------------------------------------------------------- | ----------------------------------------------------------- |
 | [`react-components`](skills/react-components)  | writing or refactoring components, pages, hooks; `'use client'` questions    | server/client examples, composition patterns, review checklist |
-| [`ui-design`](skills/ui-design)                | any visible UI work; "looks off", polish, responsive, dark mode              | layout recipes, polish checklist                             |
+| [`ui-design`](skills/ui-design)                | any visible UI work; "looks off", generic, polish, art direction, references | creative-direction, craft and critique guides; `shoot.mjs`, `design-audit.mjs`, `palette.mjs` |
 | [`design-system`](skills/design-system)        | theme, tokens, dark mode, shared components and variants, shadcn/ui          | token stylesheet (Tailwind v4 and v3), component recipes     |
 | [`accessibility`](skills/accessibility)        | a11y, WCAG, ARIA, keyboard, and any dialog, menu, tabs, form or navigation   | widget patterns, WCAG 2.2 AA checklist, `axe-scan.mjs`       |
 | [`web-performance`](skills/web-performance)    | slow pages, Core Web Vitals, Lighthouse, bundle size, jank                   | diagnosis guides, Next.js techniques, `measure-vitals.mjs`   |

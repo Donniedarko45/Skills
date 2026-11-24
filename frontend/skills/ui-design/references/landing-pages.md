@@ -1,9 +1,11 @@
 # Landing pages: the crafted marketing look
 
 How the best current product and fintech marketing pages are built, section by section, with
-sizes measured from 1440px-wide references. Read this before building any landing, home,
-product or agency page. The dashboard rules in `visual-style.md` still apply to the product UI
-fragments shown *inside* the page.
+sizes measured from 1440px-wide references. This is the default **taste layer** for marketing
+pages (see `creative-direction.md`): the vocabulary. It does not supply the concept. Write the
+brief and pick a concept and signature device first, then use this file for the anatomy and
+sizes, `visual-craft.md` for execution and `critique.md` to review. The dashboard rules in
+`visual-style.md` apply to the product UI fragments shown *inside* the page.
 
 ## Contents
 
@@ -26,7 +28,8 @@ fragments shown *inside* the page.
   sub-copy, two pill buttons, then a large product collage that starts above the fold and
   finishes below it.
 - **The product is the illustration.** Crisp UI fragments (a balance, a transaction list, a
-  chart card) floating around a central object (a phone, a card held in a hand, a photo).
+  chart card) floating around a central object that is the product (a phone running it, the
+  card held in a hand, the product window).
   No abstract blobs, no icon grids standing in for the product.
 - **Big, quiet type.** Headlines in a medium weight with tight tracking; huge light-weight
   numerals for stats; small grey body copy. Contrast comes from size and from dimming part of a

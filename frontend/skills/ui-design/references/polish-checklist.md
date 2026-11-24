@@ -1,7 +1,16 @@
 # Polish checklist
 
 Run this against the rendered screen (a screenshot or the live page), not the code. Each item
-is something a careful reviewer would notice.
+is something a careful reviewer would notice. Run `scripts/design-audit.mjs` at desktop and
+390 px first; it checks many of these automatically.
+
+## Concept
+
+- [ ] Logo swap: a competitor could not use this page unchanged. A signature device from the
+      product's own world appears two to four times, each time with meaning.
+- [ ] The hero's central object is the product (or what a service client receives), on-message.
+- [ ] Section rhythm varies (look at the thumbnail); there is a resting place every few sections.
+- [ ] Every figure and claim agrees across the page; placeholders are tagged where they appear.
 
 ## Hierarchy
 
@@ -64,6 +73,12 @@ is something a careful reviewer would notice.
 
 ## Detail
 
+- [ ] Typographic punctuation: curly quotes, en dashes for ranges, × and −, non-breaking space
+      between a number and its unit.
+- [ ] Six to nine type sizes on the whole page; tracking and leading set per size.
+- [ ] Shadows tinted toward the canvas or brand hue, not grey-black; two or three levels.
+- [ ] Focus ring and text selection colours are deliberate brand choices.
+- [ ] Fonts actually load (the audit fails on silent fallback); favicon, title and social image set.
 - [ ] One radius scale; nested radii look concentric.
 - [ ] Borders, shadows and backgrounds are not all used at once for the same separation.
 - [ ] Shadows are subtle and consistent in direction.
