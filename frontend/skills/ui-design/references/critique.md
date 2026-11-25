@@ -49,22 +49,40 @@ Run each one and write one line of result.
 
 ## 3. Score it
 
-Score each criterion 1-10 with one sentence of visible evidence, as a demanding reviewer would.
-7 is solid professional work; 9 is something you would show as a reference. Do not report until
-every criterion is at least 7, and push the two lowest up before anything else.
+Score each criterion 1-10 with one sentence of visible evidence, as a demanding blind reviewer
+would. 7 is solid professional work; 9 is something you would show as a reference. **The bar is
+9 on every criterion** (a page above 90/100). Score yourself one point lower than feels fair:
+self-scores in testing ran a point above blind reviewers. A criterion is not a 9 until every
+condition in its row holds.
 
-| Criterion | A 6 looks like | A 9 looks like |
-| --------- | -------------- | -------------- |
-| Hierarchy and first impression | several things compete; two filled buttons | one focal point, one action, an obvious reading order |
-| Typography | many sizes, default tracking, lone last words | 6-9 sizes, size-specific tracking and leading, balanced lines, real punctuation |
-| Layout and spacing | equal gaps everywhere, many edges | grouping by space, few edges, varied section rhythm |
-| Colour and restraint | several accents, decorative colour | one hue doing one job, tested contrast pairs, designed dark mode |
-| Storytelling | features listed with icons | the product shown working; proof of output |
-| Copy | generic claims, "Learn more" | specific to this audience, numbers that agree, outcome buttons |
-| Mobile | stacked desktop, collisions, small targets | recomposed hero, 44 px targets, nothing clipped |
-| Detail and polish | radius and shadow sprawl, stray misalignment | one radius family, two shadow levels, every state designed |
-| Accessibility | axe issues, faint muted text | zero axe issues, visible focus, readable everywhere |
-| Distinctiveness | could be any brand's page | a concept and signature device only this product could own |
+| Criterion | A 9 requires (all of it) |
+| --------- | ------------------------ |
+| Hierarchy and first impression | One focal element; the dark (ink) half of the headline is the whole promise on its own; one filled button directly under the copy; the hero stage has the central object plus at most three fragments, none over the object's key figure |
+| Typography | A display face chosen for the concept (not a framework default unless the concept carries it); 6-9 sizes; tracking and leading set per size; two-tone on the hero and at most two other headings; nothing readable under 12 px outside product fragments, nothing under 11 px anywhere; no lone last words |
+| Layout and spacing | Few alignment edges; no card with more than about 64 px of dead space inside; card internals align across a row; no two consecutive sections with the same structure; a resting place every few sections |
+| Colour and restraint | One hue ladder plus at most two meaning colours, each with a named job in the style sheet (income/expense, live/primary); one deep band; no glows or gradients; muted text at 4.5:1 even when large |
+| Storytelling | The hero object is the product or the deliverable; every feature is shown working; one interactive moment; proof of output (work with screens and a number); physical products shown large |
+| Copy | Specific to this audience and domain; figures agree everywhere; every invented fact tagged where it appears (names, numbers, prices, addresses); buttons name outcomes |
+| Mobile | Recomposed hero with at most two fragments, none overlapping text; a menu when the desktop header has links; 44 px targets; placeholders fit their fields; nothing truncated in the first screen |
+| Detail and polish | One radius family, two or three tinted shadow levels, designed dark mode, typographic punctuation, finished footer, every state designed |
+| Accessibility | Zero axe issues; muted and small text visibly readable (not just passing); visible focus; links and placeholder tags look different from each other |
+| Distinctiveness | Logo swap fails; the signature device is visible on the first screen; at least two stock sections (logo row, stats row, three-card features, three-tier pricing, FAQ) are replaced or reshaped by the concept |
+
+### What blind reviewers marked down (rounds 2 and 3)
+
+Each of these cost a point somewhere. Check every one before reporting:
+
+- hero collage with a phone, four floating cards and a toast ("busy"); cards covering the phone on mobile
+- the muted second line of the headline carrying the actual promise ("weakens the key promise")
+- an agency hero whose biggest object is a sample client app ("reads as a fintech product")
+- the two-tone heading on four or more sections ("becomes a tic"); a full-width statement paragraph
+- tiny letter-spaced mono labels and grey heading halves ("hard to read", even when axe passes)
+- 100-150 px of empty space inside feature cards; uneven step spacing; empty corners
+- a single soft hue with nothing else ("flat and familiar"); a mint or periwinkle card grid
+- centred sans hero + phone with floating cards + pastel cards + three-tier pricing ("today's standard template")
+- no mobile menu; a clipped input placeholder; truncated text in the first mobile screen
+- invented details (an address on a real street) not tagged as placeholders
+- small product thumbnails for a physical product
 
 ## 4. Symptom to fix
 

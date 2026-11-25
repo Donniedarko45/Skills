@@ -68,6 +68,9 @@ fragments. Merge sizes within 1-2 px of each other.
 | 48-64 px    | -0.03 to -0.04em | 1.02-1.08  |
 | 72 px +     | -0.04 to -0.05em | 0.95-1.0   |
 
+**Smallest sizes.** 12 px for anything a visitor reads; 11 px inside product fragments; never
+below. Small caps and mono labels at 12 px with at most 0.06em tracking.
+
 **Measure.** Body 45-75 characters (`max-w-[65ch]`). Display lines 8-20 characters: set
 `max-w-[14ch]`-style widths and `text-wrap: balance` so headlines break into even lines.
 
@@ -112,7 +115,7 @@ covers under 5% of pixels; it marks what is live, selected or primary.
 | muted on tinted panels        | 4.5:1   | needs a darker "ink-soft"; canvas-muted fails on tints   |
 | white on brand fill           | 4.5:1   | use a **fixed** brand fill: a theme-flipped hue goes pale in dark mode |
 | ink on light chip in dark mode | 4.5:1  | chips on deep bands need a fixed light tint, not a themed one |
-| large muted headline half     | 3:1     | the two-tone grey must still pass for large text         |
+| muted headline half           | 4.5:1   | 3:1 passes for large text, but reviewers read it as faint |
 
 **Dark mode** is a second palette: surfaces step up in lightness as they rise; accents drop
 chroma and rise in lightness; fills behind white text stay saturated and dark; deep bands stay

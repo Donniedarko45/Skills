@@ -35,8 +35,9 @@ steps 1, 6 and 7 are usually enough.
    `references/visual-craft.md`, and for the house style `references/visual-style.md` (product
    UI) or `references/landing-pages.md` (marketing pages).
 6. **Critique**: render it and run `scripts/shoot.mjs`, `scripts/design-audit.mjs` (desktop and
-   390 px) and an axe scan; run the tests and score in `references/critique.md`. Fix, then
-   critique again. At least two rounds before reporting.
+   390 px) and an axe scan; run the tests and score in `references/critique.md` against its
+   "a 9 requires" conditions and its list of what blind reviewers marked down. Fix, then
+   critique again. At least two rounds; the bar is 9 on every criterion.
 7. **Polish**: the final pass in `references/polish-checklist.md`.
 
 ### Defaults when nothing is given
@@ -256,8 +257,9 @@ silently fell back. Use the `accessibility` skill's axe scan for contrast and se
 
 Then run the tests in `references/critique.md` (squint, greyscale, thumbnail, five seconds, logo
 swap, remove one thing, side by side with the references, mobile first screen, dark mode,
-stress), score the ten criteria, and fix the two lowest first. Repeat until every criterion is
-at least 7 and every audit FAIL is gone; at least two rounds.
+stress), score the ten criteria against the "a 9 requires" table, and fix the two lowest
+first. Repeat until every criterion is at least 9, every audit FAIL is gone and every WARN is
+fixed or deliberately kept; at least two rounds.
 
 When reporting, say what you changed and why in design terms (hierarchy, rhythm, contrast,
 concept), and include the screenshots if the environment lets you share them.

@@ -247,7 +247,44 @@ function measure() {
   if (h1s !== 1) outlineIssues.push(`${h1s} h1 elements (expected 1)`)
   for (let i = 1; i < outline.length; i++) if (outline[i].level > outline[i - 1].level + 1) outlineIssues.push(`skips from h${outline[i - 1].level} to h${outline[i].level} at "${outline[i].text}"`)
 
+  // ---- small text: reviewers read tiny letter-spaced labels as low contrast
+  const tiny = []; const small = []
+  for (const el of textEls) {
+    const size = px(getComputedStyle(el).fontSize)
+    if (size < 11) tiny.push(`${size}px ${describe(el)}`)
+    else if (size < 12 && !el.closest('[aria-hidden="true"]')) small.push(`${size}px ${describe(el)}`)
+  }
+
+  // ---- two-tone headings: a heading containing a run in a different colour
+  let twoTone = 0; const twoToneList = []
+  for (const h of vis.filter((e) => /^H[1-3]$/.test(e.tagName) || (e.matches('p,div') && px(getComputedStyle(e).fontSize) >= 32 && ownText(e)))) {
+    const base = getComputedStyle(h).color
+    const other = [...h.querySelectorAll('span,em,strong')].find((s) => getComputedStyle(s).color !== base && (s.innerText || '').trim().length >= 6)
+    if (other) { twoTone++; twoToneList.push(short(h.innerText, 40)) }
+  }
+
+  // ---- mobile navigation: a header that shows links on desktop but none on a phone
+  let mobileNavMissing = false
+  if (mobile) {
+    const header = document.querySelector('header')
+    if (header) {
+      const links = [...header.querySelectorAll('a[href]')].filter(visible)
+      const toggle = [...header.querySelectorAll('button,summary,[role=button]')].filter(visible).some((b) => /menu|navigation|nav/i.test((b.getAttribute('aria-label') || '') + ' ' + (b.innerText || '') + ' ' + (b.getAttribute('aria-controls') || '')) || b.hasAttribute('aria-expanded') || b.tagName === 'SUMMARY')
+      if (links.length <= 2 && !toggle) mobileNavMissing = true
+    }
+  }
+
+  // ---- input placeholders cut off by their field
+  const clippedPlaceholders = []
+  const ctx2 = document.createElement('canvas').getContext('2d')
+  for (const input of vis.filter((e) => e.matches('input[placeholder],textarea[placeholder]'))) {
+    const cs = getComputedStyle(input); ctx2.font = `${cs.fontWeight} ${cs.fontSize} ${cs.fontFamily}`
+    const room = input.clientWidth - px(cs.paddingLeft) - px(cs.paddingRight)
+    if (input.tagName === 'INPUT' && ctx2.measureText(input.placeholder).width > room + 1) clippedPlaceholders.push(`"${short(input.placeholder, 40)}"`)
+  }
+
   return {
+    tiny, small, twoTone, twoToneList, mobileNavMissing, clippedPlaceholders,
     viewport: { w: vw, h: vh }, screens: Math.round((document.documentElement.scrollHeight / vh) * 10) / 10,
     sizes, families, weights, fallback, undeclared, longLines, widows, clipped, truncated, overlaps, overflowX, wide,
     offScale: [...offScale.entries()].sort((a, b) => b[1] - a[1]), radii, shadows, textColors, bgColors,
@@ -283,6 +320,11 @@ function report(m, opts) {
   const bgs = new Set(m.filled.map((f) => f.bg))
   if (m.filled.length > 3 || bgs.size > 2) add('WARN', `${m.filled.length} filled buttons in ${bgs.size} colours on the first screen; one primary action should win`)
   for (const o of m.outlineIssues) add('WARN', `heading outline: ${o}`)
+  if (m.tiny.length) add('WARN', `${m.tiny.length} texts under 11px (reviewers read them as illegible): ${m.tiny.slice(0, 3).join('; ')}`)
+  if (m.small.length > 3) add('WARN', `${m.small.length} readable texts under 12px outside product fragments: ${m.small.slice(0, 3).join('; ')}`)
+  if (m.twoTone > 3) add('WARN', `two-tone treatment on ${m.twoTone} headings (keep it to the hero and at most two more): ${m.twoToneList.slice(0, 5).join(' | ')}`)
+  if (m.mobileNavMissing) add('WARN', 'the header shows no navigation on mobile and has no menu button')
+  for (const c of m.clippedPlaceholders) add('WARN', `input placeholder does not fit its field: ${c}`)
   if (m.truncated.length) add('INFO', `${m.truncated.length} truncated texts (ellipsis/line-clamp); make sure the full value is reachable`)
 
   out.push(`Design audit: ${opts.url}`)

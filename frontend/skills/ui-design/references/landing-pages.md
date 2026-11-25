@@ -71,8 +71,8 @@ generated page did.
   --surface: oklch(1 0 0);           /* cards */
   --tray: oklch(0.955 0.006 85);     /* grey block behind footer, secondary panels */
   --ink: oklch(0.2 0.01 60);         /* headings, primary buttons */
-  --ink-muted: oklch(0.55 0.01 60);  /* second half of headlines, body copy */
-  --ink-faint: oklch(0.72 0.008 60); /* third tier: dimmed statement text, axis labels */
+  --ink-muted: oklch(0.52 0.01 60);  /* second half of headlines, body copy: about 5:1 on canvas */
+  --ink-faint: oklch(0.58 0.008 60); /* third tier (fading statement text): still about 4.5:1 */
   --line: oklch(0.9 0.006 85);
   /* one hue, as a ladder: 100 for big tinted areas, 200-300 for cards, 700 for text, 900 for the deep band */
   --hue-100: oklch(0.95 0.03 275);
@@ -95,9 +95,26 @@ generated page did.
 | Eyebrow                    | 12-13px uppercase sans, tracking 0.08em          | 12px                  |
 | UI fragment text           | 11-14px                                          | same                  |
 
-One sans family does everything (Geist, Inter Display, General Sans, Neue Montreal-like
-grotesks). An editorial serif for headings is a valid alternative (one reference uses a light
-serif throughout), but then it is the *only* heading face, not an accent.
+Choose the display face for the concept; it is the fastest route to distinctiveness. Either a
+refined serif (one reference uses a light serif for every heading) or a grotesk with a
+distinctive cut, with a clean sans for body text and UI. A framework default (Geist, Inter) as
+the display face reads as a template unless the concept carries it. Whatever you choose is the
+*only* heading face, not an accent word. Available offline from npm as `@fontsource/<name>` or
+`@fontsource-variable/<name>` (load with `next/font/local`):
+
+- serifs: Fraunces, Newsreader, Instrument Serif, Young Serif, Source Serif 4, Libre Caslon Text
+- grotesks with character: Bricolage Grotesque, Schibsted Grotesk, Familjen Grotesk, Hanken
+  Grotesk, Onest, Instrument Sans
+- body and UI: Inter, Geist (package `geist`), Instrument Sans, Hanken Grotesk
+
+**Smallest text:** 12 px for anything a visitor reads, 11 px inside product fragments, never
+below. Small mono labels at 12 px with tracking at most 0.06em. Reviewers mark down tiny
+letter-spaced labels as hard to read even when they pass contrast.
+
+**Two-tone headlines:** read the dark half alone: it must be the whole promise. The muted half
+qualifies ("Freelance bookkeeping, / with the tax worked out." fails if the muted line is the
+benefit; flip it, or keep the benefit dark). Use it on the hero and at most two other headings.
+The muted tone must reach 4.5:1 on its background, not just the 3:1 large-text minimum.
 
 Radius: choose one family and keep it. Soft (12px cards, 24-32px photo cards, full pills) or
 editorial (0-4px cards, full pills). Buttons are always pills, `h-11` to `h-12`.
@@ -138,11 +155,25 @@ Order, all centred, `max-w-3xl` for the text:
    - one background texture behind it: 3-4 concentric circles in `--line`, a dot field fading
      out, or thin circuit lines with small rounded nodes;
    - the stage's bottom edge fades into the canvas or is cut cleanly by the next section.
+   - **Limits:** the central object plus at most three fragments on desktop and two on mobile;
+     no fragment covers the object's key figure or headline; leave space between fragments.
+     A phone with four cards and a toast was judged "busy" every time.
 
 The first screen shows the chip, headline, buttons and the top half of the stage. The proof row
 of logos may sit inside the hero, between buttons and stage.
 
 ## 6. Section patterns (pick 6-9)
+
+**Reshape the stock sections.** A logo row, a stats row, three feature cards, three-tier pricing
+with a dark middle card and an FAQ accordion together read as a template. Replace or reshape at
+least two with the concept: Tally's deadlines band as an IRS calendar with a live "next payment"
+chip; pricing as a rate card an agency can mark up; the logo row as redacted client names. No two
+consecutive sections share the same structure. Cards hug their content: no more than about 64 px
+of empty space inside a card, and card internals (titles, figures, links) align across a row.
+
+**Colour with jobs.** Besides the hue ladder, up to two meaning colours are allowed, each with a
+named job in the style sheet (income and expense; live and primary). A single soft hue with
+nothing else was judged "flat and familiar"; colours that encode meaning were praised.
 
 ### Earn distinctiveness inside the layout
 
