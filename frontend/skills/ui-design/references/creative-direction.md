@@ -106,6 +106,8 @@ with the ledger lines"). One device, used two to four times, each time carrying 
 | Framing device     | multiplayer cursor tags, margin annotations, redaction bars, sticky-note callouts |
 
 Rules: the device uses the page's tokens (it is the same palette and type, used cleverly); it
+is **visible on the first screen** (a device that only appears below the fold leaves the first
+impression generic, and blind reviewers still called such pages "a familiar template"); it
 never covers content; it has a reduced-motion version; and if removing it makes no section
 worse, it was decoration.
 

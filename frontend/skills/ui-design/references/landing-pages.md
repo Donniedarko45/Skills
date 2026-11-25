@@ -125,7 +125,12 @@ Order, all centred, `max-w-3xl` for the text:
      the product held in a hand (a card, a device). For a service business, it is what the client
      receives: the proposal, the matched team, the deliverable. A lifestyle stock photo is not a
      central object; photography belongs in later sections. The object must be on-message: an
-     agency hero showing an unrelated sample app makes the visitor ask whose product it is;
+     agency hero whose biggest element is a sample client app (a banking app, a health app)
+     reads as that client's product, twice judged off-message. For services, make the agency's
+     own artifact the biggest thing (the team card, the proposal, the branded hand-over) and, if
+     a client app appears, frame it as work ("Shipped for an agency in Lisbon"). For physical
+     products (food, furniture, devices), large product photography *is* the central object;
+     small thumbnails sell the schedule, not the product;
    - 3-5 UI fragments around it, partly overlapping it, at different heights: a metric card,
      a short list ("This month": two rows with avatar, name, date, amount), a mini chart;
    - at most one or two **cursor tags**, only when collaboration is part of the story, never covering content:: a small coloured label with a pointer arrow, as in a multiplayer design
@@ -227,6 +232,10 @@ copyright row.
 
 ## 9. Mobile
 
+- Keep a menu: if the header has more than two links on desktop, mobile gets a menu button
+  (a `details` disclosure or a dialog), not just the logo and one button.
+- Floating hero fragments must not cover the central object's text at 390 px; the design audit
+  reports text overlapping text, including inside decorative (aria-hidden) fragments.
 - Headline 40-44px, still two-tone; buttons full-width or side by side if both fit.
 - The hero stage keeps the central object and 2 fragments; the rest are hidden, not shrunk.
 - Stats stack in a 2x2 grid with horizontal rules; the staircase becomes a stack of rising bars

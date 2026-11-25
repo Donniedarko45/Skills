@@ -155,11 +155,11 @@ function measure() {
     if (!ownText(el)) continue // containers that crop decoration or images are fine
     clipped.push(describe(el))
   }
-  // text-to-text overlap, using the rendered text runs (inline elements wrap into several boxes);
-  // decorative (aria-hidden) groups such as overlapping avatar stacks are skipped
+  // text-to-text overlap, using the rendered text runs (inline elements wrap into several boxes).
+  // Decorative hero fragments are usually aria-hidden but still seen, so they are checked; only
+  // overlaps inside one small decorative group (an avatar stack) are treated as intended.
   const runs = []
   for (const el of textEls) {
-    if (el.closest('[aria-hidden="true"]')) continue
     for (const node of el.childNodes) {
       if (node.nodeType !== 3 || !node.textContent.trim()) continue
       const r = document.createRange(); r.selectNodeContents(node)
@@ -177,6 +177,8 @@ function measure() {
     for (let j = i + 1; j < runs.length; j++) {
       const a = runs[i], b = runs[j]
       if (a.el === b.el || a.el.contains(b.el) || b.el.contains(a.el)) continue
+      const ga = a.el.closest('[aria-hidden="true"]'); const gb = b.el.closest('[aria-hidden="true"]')
+      if (ga && ga === gb && ga.getBoundingClientRect().width < 160) continue
       const x = Math.min(a.r.right, b.r.right) - Math.max(a.r.left, b.r.left)
       const y = Math.min(a.r.bottom, b.r.bottom) - Math.max(a.r.top, b.r.top)
       if (x <= 2 || y <= 3) continue
